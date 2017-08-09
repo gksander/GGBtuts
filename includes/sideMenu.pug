@@ -1,0 +1,12 @@
+// - Nav Panel params
+- var navItems = [];
+- navItems.push({title: 'Basics', links: [ ["Home", "index.html"], ["Getting Started", "geogebra/gettingStarted.html"], ["Basic 2D Commands", "geogebra/basics2D.html"], ["Using Text", "geogebra/text.html"], ["Logic and Sequences", "geogebra/logicAndSequences.html"], ["Scripting", "geogebra/scripting.html"], ["3D Basics", "geogebra/basics3D.html"] ]})
+
+
+aside.menu
+  each item in navItems
+    p.menu-label #{item.title}
+    ul.menu-list
+      each link in item.links
+        li
+          a(href=relDepth + link[1], class=sideMenuTitle==link[0] ? "is-active" : "") #{link[0]}

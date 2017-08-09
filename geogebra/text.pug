@@ -1,0 +1,19 @@
+extends ../layouts/geogebra
+
+block resourceVars
+  - var relDepth = "../"
+  - var subject = "geogebra"
+  - var sideMenuTitle = "Using Text"
+  - var title = "GeoGebra"
+  - var subtitle = sideMenuTitle
+
+  - var resources = []
+  - resources.push({ title: 'Text Basics', type: 'video', videoAspectRatio: 1.5, videoID: 'WiSoAIYU-2A' })
+  - resources.push({ title: 'Dynamic Text Value', type: 'video', videoAspectRatio: 1.5, videoID: 'MGBOQ7ZlSEE' })
+  - resources.push({ title: 'LaTeX in GeoGebra', type: 'video', videoAspectRatio: 1.5, videoID: 'mA60YG0FTkg' })
+  - resources.push({ title: 'Example: Change Slider', type: 'video', videoAspectRatio: 1.5, videoID: 'oT9VYhoW3kI' })
+
+
+block resourceDescription
+  p
+    | On this page, we will explore how to add text to GeoGebra constructions. GeoGebra has wonder text support: you can make text move around the screen, have the contents of the text change dynamically, and render beautiful math with LaTeX!
