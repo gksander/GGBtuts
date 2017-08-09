@@ -4,7 +4,7 @@ section.hero.is-primary.page-banner
       .columns.is-vcentered
 
         .column.is-8
-          p.title.is-1 #{title}
+          p.title.is-1= title ? title : "GeoGebra Tuts"
           p.subtitle.is-3 #{subtitle}
 
         .column
