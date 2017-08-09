@@ -1,0 +1,51 @@
+extends main
+
+block vars
+  - var mainMenuActiveItem = "resources"
+  block resourceVars
+
+block content
+  .container
+    section.section
+      .columns
+        .column.is-4
+          //- Nav Panel params
+          - var navItems = [];
+          - navItems.push(["Home", "index.html"])
+          - navItems.push(["Getting Started", "geogebra/gettingStarted.html"])
+          - navItems.push(["Basic 2D Commands", "geogebra/basics2D.html"])
+          - navItems.push(["Using Text", "geogebra/text.html"])
+          - navItems.push(["Logic and Sequences", "geogebra/logicAndSequences.html"])
+          - navItems.push(["Scripting", "geogebra/scripting.html"])
+          - navItems.push(["3D Basics", "geogebra/basics3D.html"])
+
+          include ../includes/navPanel-1D.pug
+        .column.is-8
+          .card
+            header.card-header
+              p.card-header-title= subtitle
+            .card-content
+              block resourceDescription
+          
+          if resources
+            br/
+            .card
+              .card-header
+                p.card-header-title Resources
+              .card-content
+                each rsc in resources
+                  .box.resource-box
+                    .columns.is-vcentered
+                      .column= rsc.title
+                      .column.is-narrow
+
+                        case rsc.type
+                          when "video"
+                            a.button.is-danger.is-outlined.video-button(data-videoid=rsc.videoID, data-aspectratio=rsc.videoAspectRatio)
+                              span.icon: i.fa.fa-file-video-o
+                              span Video
+                          when "applet"
+                            a.button.is-info.is-outlined
+                              span.icon: i.fa.fa-line-chart
+                              span Applet
+                          //- Need to handle documents.

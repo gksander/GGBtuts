@@ -1,0 +1,6 @@
+nav.panel
+  p.panel-heading= panelTitle ? panelTitle : "Navigation"
+  each item in navItems
+    a.panel-block(href=relDepth + item[1], class=navPanelTitle==item[0] ? "is-active" : "")
+      span.panel-icon: i.fa.fa-book
+      | #{item[0]}

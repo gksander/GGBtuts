@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    block vars
+    title= htmlTitle ? htmlTitle : "GGB Tuts"
+    meta(name="viewport", content="width=device-width,initial-scale=1.0")
+    link(rel="icon", type="image/x-icon", href=relDepth + "img/theming/favicon.png")
+    //- Styles
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Zilla+Slab")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href=relDepth + "css/main.css")
+
+    //- Scripts
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src=relDepth + "js/main-dist.js")
+    block scripts
+
+  body
+    .wrapper
+      include ../includes/pageBanner.pug
+      block content
+      include ../includes/footer.pug
+      include ../includes/videomodal.pug 
