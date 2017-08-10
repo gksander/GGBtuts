@@ -12,6 +12,23 @@
   </head>
   <body>
     <div class="wrapper">
+      <nav class="navbar">
+        <div class="navbar-brand"><a class="navbar-item" href="../index.html"><img src="../img/ggb.png" alt="Logo"></a>
+          <div class="navbar-burger burger" id="navMenuBurger" data-target="navMenu"><span></span><span></span><span></span></div>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link" href="../index.html">Basics</a>
+              <div class="navbar-dropdown"><a class="navbar-item" href="../index.html">Home</a><a class="navbar-item" href="../basics/gettingStarted.html">Getting Started</a><a class="navbar-item" href="../basics/basics2D.html">Basic 2D Commands</a><a class="navbar-item" href="../basics/text.html">Using Text</a><a class="navbar-item" href="../basics/logicAndSequences.html">Logic and Sequences</a><a class="navbar-item" href="../basics/scripting.html">Scripting</a><a class="navbar-item" href="../basics/basics3D.html">3D Basics</a>
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link" href="../examples/basics.html">Examples</a>
+              <div class="navbar-dropdown"><a class="navbar-item is-active" href="../examples/basics.html">Basic Examples</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
       <section class="hero is-primary page-banner">
         <div class="hero-body">
           <div class="container">
@@ -39,8 +56,7 @@
       <div class="container">
         <section class="section">
           <div class="columns">
-            <div class="column is-3">
-              <!-- - Nav Panel params-->
+            <div class="column is-3 is-hidden-touch">
               <aside class="menu">
                 <p class="menu-label">Basics</p>
                 <ul class="menu-list">
@@ -52,13 +68,13 @@
                   <li><a href="../basics/scripting.html">Scripting</a></li>
                   <li><a href="../basics/basics3D.html">3D Basics</a></li>
                 </ul>
-                <p class="menu-label">Teaching Examples</p>
+                <p class="menu-label">Examples</p>
                 <ul class="menu-list">
                   <li><a class="is-active" href="../examples/basics.html">Basic Examples</a></li>
                 </ul>
               </aside>
             </div>
-            <div class="column is-8">
+            <div class="column">
               <div class="card">
                 <header class="card-header">
                   <p class="card-header-title">Basic Examples</p>

@@ -5,8 +5,8 @@ var cosmal = {
 
 $(function () { // Document ready
   // Toggle menu
-  $("#mainMenuToggleButton").on('click', function () {
-    $("#mainMenuToggleButton, #mainNavMenu").toggleClass("is-active");
+  $("#navMenuBurger").on('click', function () {
+    $("#navMenuBurger, #navMenu").toggleClass("is-active");
   });
 
 

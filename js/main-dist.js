@@ -6,8 +6,8 @@ var cosmal = {
 };
 
 $(function() {
-    $("#mainMenuToggleButton").on("click", function() {
-        $("#mainMenuToggleButton, #mainNavMenu").toggleClass("is-active");
+    $("#navMenuBurger").on("click", function() {
+        $("#navMenuBurger, #navMenu").toggleClass("is-active");
     }), $(".video-button").length > 0 && ($.getScript("https://www.youtube.com/iframe_api"), 
     window.onYouTubeIframeAPIReady = function() {
         cosmal.player = new YT.Player("cosmal-video-iframe", {

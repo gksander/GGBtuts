@@ -1,0 +1,18 @@
+nav.navbar
+  div.navbar-brand
+    a(href=relDepth + "index.html", class="navbar-item")
+      img(src=relDepth+"img/ggb.png", alt="Logo")
+    
+    .navbar-burger.burger#navMenuBurger(data-target="navMenu")
+      span
+      span
+      span
+  
+  div#navMenu.navbar-menu
+    .navbar-start
+      each item in navItems
+        .navbar-item.has-dropdown.is-hoverable
+          a.navbar-link(href=relDepth + item.links[0][1])= item.title
+          .navbar-dropdown
+            each link in item.links
+              a.navbar-item(href=relDepth + link[1], class=sideMenuTitle==link[0] ? "is-active" : "")= link[0]

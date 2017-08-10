@@ -1,41 +1,106 @@
-extends main
+//- VARIABLES
 
-block vars
-  - var mainMenuActiveItem = "resources"
-  block resourceVars
+//- Nav Panel params
+- var navItems = [];
+- navItems.push({title: 'Basics', links: [ ["Home", "index.html"], ["Getting Started", "basics/gettingStarted.html"], ["Basic 2D Commands", "basics/basics2D.html"], ["Using Text", "basics/text.html"], ["Logic and Sequences", "basics/logicAndSequences.html"], ["Scripting", "basics/scripting.html"], ["3D Basics", "basics/basics3D.html"] ]});
 
-block content
-  .container
-    section.section
-      .columns
-        .column.is-3
-          include ../includes/sideMenu.pug
-        .column.is-8
-          .card
-            header.card-header
-              p.card-header-title= subtitle
-            .card-content.content
-              block resourceDescription
+-navItems.push({ title: 'Examples', links: [ ['Basic Examples', 'examples/basics.html'] ] })
+
+
+doctype html
+html
+  head
+    block vars
+    title= htmlTitle ? htmlTitle : "GGB Tuts"
+    meta(name="viewport", content="width=device-width,initial-scale=1.0")
+    link(rel="icon", type="image/x-icon", href=relDepth + "img/theming/favicon.png")
+    //- Styles
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Zilla+Slab")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href=relDepth + "css/main.css")
+
+    //- Scripts
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src=relDepth + "js/main-dist.js")
+    block scripts
+
+  body
+    .wrapper
+      include ../includes/navMenu.pug
+      include ../includes/pageBanner.pug
+
+      .container
+        section.section
+          .columns
+            .column.is-3.is-hidden-touch
+              include ../includes/sideMenu.pug
+            .column
+              .card
+                header.card-header
+                  p.card-header-title= subtitle
+                .card-content.content
+                  block resourceDescription
+              
+              if resources
+                br/
+                .card
+                  .card-header
+                    p.card-header-title Resources
+                  .card-content
+                    each rsc in resources
+                      .box.resource-box
+                        .columns.is-vcentered
+                          .column= rsc.title
+                          .column.is-narrow
+
+                            case rsc.type
+                              when "video"
+                                a.button.is-danger.is-outlined.video-button(data-videoid=rsc.videoID, data-aspectratio=rsc.videoAspectRatio)
+                                  span.icon: i.fa.fa-file-video-o
+                                  span Video
+                              when "applet"
+                                a.button.is-info.is-outlined
+                                  span.icon: i.fa.fa-line-chart
+                                  span Applet
+                              //- Need to handle documents.
+      
+      include ../includes/footer.pug
+      include ../includes/videomodal.pug 
+
+
+
+//- block content
+//-   .container
+//-     section.section
+//-       .columns
+//-         .column.is-3
+//-           include ../includes/sideMenu.pug
+//-         .column.is-8
+//-           .card
+//-             header.card-header
+//-               p.card-header-title= subtitle
+//-             .card-content.content
+//-               block resourceDescription
           
-          if resources
-            br/
-            .card
-              .card-header
-                p.card-header-title Resources
-              .card-content
-                each rsc in resources
-                  .box.resource-box
-                    .columns.is-vcentered
-                      .column= rsc.title
-                      .column.is-narrow
+//-           if resources
+//-             br/
+//-             .card
+//-               .card-header
+//-                 p.card-header-title Resources
+//-               .card-content
+//-                 each rsc in resources
+//-                   .box.resource-box
+//-                     .columns.is-vcentered
+//-                       .column= rsc.title
+//-                       .column.is-narrow
 
-                        case rsc.type
-                          when "video"
-                            a.button.is-danger.is-outlined.video-button(data-videoid=rsc.videoID, data-aspectratio=rsc.videoAspectRatio)
-                              span.icon: i.fa.fa-file-video-o
-                              span Video
-                          when "applet"
-                            a.button.is-info.is-outlined
-                              span.icon: i.fa.fa-line-chart
-                              span Applet
-                          //- Need to handle documents.
+//-                         case rsc.type
+//-                           when "video"
+//-                             a.button.is-danger.is-outlined.video-button(data-videoid=rsc.videoID, data-aspectratio=rsc.videoAspectRatio)
+//-                               span.icon: i.fa.fa-file-video-o
+//-                               span Video
+//-                           when "applet"
+//-                             a.button.is-info.is-outlined
+//-                               span.icon: i.fa.fa-line-chart
+//-                               span Applet
+//-                           //- Need to handle documents.
