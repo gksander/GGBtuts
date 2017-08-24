@@ -1,52 +1,201 @@
-// @import "../bower_components/font-awesome/css/font-awesome.css"
-@import "../bower_components/bulma/sass/utilities/initial-variables"
-// Import my own styles
 @import "variables"
 
-@import "../bower_components/bulma/bulma.sass"
 
-// ADDITIONAL STYLES
+/* 
+  GENERAL LAYOUT, INCLUDING RESPONSIVENESS
+ */
 
-// Make footer go to bottom on short pages.
-.footer
-    padding: 20px !important
-    position: absolute
-    bottom: 0
+// Style Header
+#header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  height: $header-height
+
+  display: flex
+  flex-direction: row
+  align-content: center
+  align-items: center
+  justify-content: space-between
+  padding: $pad
+  box-shadow: 0px 2px 3px lighten($border-color, 40%)
+  z-index: 6
+
+  #menuButton
+    display: inline
+    font-size: 30px
+    cursor: pointer
+    transition: text-shadow 500ms
+    &:hover
+      text-shadow: 1px 1px black
+  
+  #icon
+    cursor: pointer
+    img
+      width: 30px
+  #author
+    font-size: 15px
+    color: #4a4a4a
+    font-style: italic
+  
+
+// Style SideMenu
+#sideMenu
+  position: fixed
+  top: $header-height + 2*$pad
+  bottom: 0px
+  left: -1.2*$side-menu-width
+  width: $side-menu-width
+  padding: $pad
+  padding-left: 2*$pad
+  transition: all 500ms
+  background: white
+  z-index: 5
+  overflow: auto
+
+  &.sideMenuShown
+    left: 0px
     width: 100%
+    opacity: 0.95
+  
+  p.menu-label
+    color: #7a7a7a
+    text-transform: uppercase
+    letter-spacing: 0.1em
+  ul.menu-list
+    list-style: none
+    line-height: 1.5
+    padding: 0px
+    li
+      margin: 0
+      padding: 0
+      a
+        border-radius: 2px
+        color: #4a4a4a
+        display: block
+        padding: 5px 8px
+        text-decoration: none
+        &:hover
+          background: rgba(140,140,140, 0.1)
+        &.is-active
+          background: $primary
+          color: white
 
-html, body 
-    // height: 100%
-    font-family: 'Zilla Slab', serif !important
-    font-size: 18px !important
+#content
+  position: fixed
+  top: $header-height + 2*$pad
+  bottom: 0px
+  left: 0px
+  right: 0px
+  overflow: auto
+  padding-bottom: 30px
+  #contentContainer
+    padding: 15px
+    margin: 0px auto
+    max-width: 800px
 
-.wrapper
-    min-height: 100vh
-    position: relative
-    padding-bottom: 200px
+// For larger screens
+@media all and (min-width: 800px)
+  #header
+    height: $header-height-desktop
+    #menuButton
+      display: none
+    box-shadow: none
+    #icon img
+      width: 35px
+  
+  #sideMenu
+    left: 0px
+    top: $header-height-desktop + 2*$pad
+    width: $side-menu-width-desktop
+  
+  #content
+    left: $side-menu-width-desktop + 3*$pad
+    top: $header-height-desktop + 2*$pad
 
-.navbar
-    // background: $primary
-    // >a
-    // 	color: white !important
 
 
-// Some text modifiers
-@for $i from 12 through 30
-    .text-#{$i}
-        font-size: #{$i}px
+/* General Styles */
+body
+  font-size: 18px
+  font-family: 'Zilla Slab', serif !important
 
-.text-bold
+.button
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 18px
+  font-family: 'Zilla Slab', serif !important
+  padding: 4px 8px
+  border: 1px solid
+  border-radius: 3px
+  cursor: pointer
+  background: white
+
+  &.red
+    border-color: red
+    color: red
+    &:hover
+      background: red
+      color: white
+  &.blue
+    border-color: blue
+    color: blue
+    &:hover
+      background: blue
+      color: white
+
+
+.red
+  color: red
+
+.banner
+  // width: 100%
+  background: $primary
+  padding: 20px
+  color: white
+  text-align: center
+  h1
+    font-size: 36px;
+    margin: 5px 0px;
+  h3
+    font-size: 30px
+    margin: 0px
+
+// Card styles
+.card
+  background-color: white
+  color: #4a4a4a
+  max-width: 100%
+  border: 1px solid $border-color
+  box-shadow: 0px 1px 1px lighten($border-color, 50%)
+
+  .card-title
+    border-bottom: 1px solid $border-color
+    padding: 8px
+    font-size: 22px
     font-weight: bold
+  .card-body
+    padding: 8px
 
-.text-primary
-    color: $primary
-.text-info
-    color: $info
-
-// Tone down the section padding
-section.section
-    padding: 2rem 1.5rem
-
+// Resource boxes
+.resource-box
+  margin: 10px
+  padding: 10px
+  border: 1px solid $border-color
+  border-radius: 5px
+  color: #4a4a4a
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  cursor: pointer
+  transition: background 300ms
+  i
+    font-size: 24px
+  &:hover
+    background: rgba(150,150,150, 0.1)
 
 // Video overlay styling
 .video-overlay
@@ -79,27 +228,3 @@ section.section
     
     #close-video-overlay
         visibility: hidden
-
-
-// Styling for e-text
-// Image styling.
-.content img
-    display: block
-    margin: 0px auto
-    // box-shadow: 0px 0px 2px rgba(40,40,40,0.9)
-    border: 1px solid rgba(180,180,180,1)
-    border-radius: 5px
-    max-width: 100%
-
-@for $i from 1 through 9
-    $width: 100*$i
-
-    img.width-#{$width}
-        width: #{$width}px
-    img.height-#{$width}
-        height: #{$width}px
-
-.resource-box
-    transition: background-color 300ms
-    &:hover
-        background-color: rgba(240,240,240,0.9)
