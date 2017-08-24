@@ -1,0 +1,52 @@
+extends ../layouts/main
+
+block vars
+  - var relDepth = "../"
+  - var sideMenuTitle = "Pretty Grapher"
+  - var subtitle = sideMenuTitle
+
+block scripts
+  script(src="https://cdn.geogebra.org/apps/deployggb.js")
+  script(src=relDepth + 'js/prettyGraph-dist.js')
+
+block content
+  +descriptionBlock("Instructions")
+    p
+      | The purpose of this page is to make it easy to create and export function graphs. Here are some brief instructions:
+    ul
+      li Click in the box with the function definition for f in the applet below. This should allow you to change the definition of f.
+      li To change the styling of the graph of f, you can click on the graph of f (in the Graphics View), then click the square at the top-right of the Graphics View, and use the styling bar there.
+      li To adjust the axes labels, double-click on the text on the axes and adjust the text in the dialog that will pop up.
+      li Using your mouse/trackpad, you can pan and zoom the graphics view.
+      li To export the graph, use the options under the applet.
+    p
+      | Even though this was designed to quickly create function graphs, you can also use this applet as you normally would -- and then use the export option.
+  
+  br/
+  
+  #appContainer
+  
+  br/
+  +descriptionBlock("Export Options")
+    p Set the parameters below, and then press the Export button. The set defaults generally work well, but feel free to change the parameters.
+
+    ul
+      li: p
+        | Filename (no extension): 
+        input#filename(type="text", value="graph")
+      li: p
+        | Export Scale (how much graphics is scaled up): 
+        input#scale(type="text", value="2")
+      li: p
+        | Transparent Background?  
+        span
+          input#trans(type="radio", name="transparent", value="yes") 
+          | Yes
+        span
+          input(type="radio", name="transparent", value="no", checked="true") 
+          | No
+      li: p
+        | DPI (Resolution): 
+        input#DPI(type="text", value="100")
+    
+    p: button.button.blue#export Export!

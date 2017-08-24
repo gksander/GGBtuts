@@ -1,0 +1,18 @@
+mixin descriptionBlock(title)
+  div.card
+    div.card-title= title
+    div.card-body
+      block
+
+mixin resourceList(resources)
+  div.card
+    div.card-title Resources
+    div.card-body
+      each rsc in resources
+        case rsc.type
+          when "video"
+            a.resource-box.video-button(
+              data-videoid=rsc.videoID, data-aspectratio=rsc.videoAspectRatio
+            )
+              | #{rsc.title}
+              i.fa.fa-file-video-o.red
