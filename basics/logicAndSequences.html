@@ -6,141 +6,53 @@
     <link rel="icon" type="image/x-icon" href="../img/theming/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zilla+Slab">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main2.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/main-dist.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <nav class="navbar">
-        <div class="navbar-brand"><a class="navbar-item" href="../index.html"><img src="../img/ggb.png" alt="Logo"></a>
-          <div class="navbar-burger burger" id="navMenuBurger" data-target="navMenu"><span></span><span></span><span></span></div>
-        </div>
-        <div class="navbar-menu" id="navMenu">
-          <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link" href="../index.html">Basics</a>
-              <div class="navbar-dropdown"><a class="navbar-item" href="../index.html">Home</a><a class="navbar-item" href="../basics/gettingStarted.html">Getting Started</a><a class="navbar-item" href="../basics/basics2D.html">Basic 2D Commands</a><a class="navbar-item" href="../basics/text.html">Using Text</a><a class="navbar-item is-active" href="../basics/logicAndSequences.html">Logic and Sequences</a><a class="navbar-item" href="../basics/scripting.html">Scripting</a><a class="navbar-item" href="../basics/basics3D.html">3D Basics</a>
-              </div>
-            </div>
-            <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link" href="../examples/basics.html">Examples</a>
-              <div class="navbar-dropdown"><a class="navbar-item" href="../examples/basics.html">Basic Examples</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <section class="hero is-primary page-banner">
-        <div class="hero-body">
-          <div class="container">
-            <div class="columns is-vcentered">
-              <div class="column is-8">
-                <p class="title is-1">GeoGebra Tuts</p>
-                <p class="subtitle is-3">Logic and Sequences</p>
-              </div>
-              <div class="column">
-                <div class="box">
-                  <article class="media is-vcentered">
-                    <div class="media-left">
-                      <figure class="image is-64x64"><img src="../img/ggb.png" alt="Logo"></figure>
-                    </div>
-                    <div class="media-content">
-                      <div class="content">GeoGebra tutorials for teachers.</div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div id="header"><span id="menuButton"><i class="fa fa-bars"></i></span><span>Header icon...</span><span>Grant Sander</span></div>
+    <div id="sideMenu">
+      <p class="menu-label">Basics</p>
+      <ul class="menu-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../basics/gettingStarted.html">Getting Started</a></li>
+        <li><a href="../basics/basics2D.html">Basic 2D Commands</a></li>
+        <li><a href="../basics/text.html">Using Text</a></li>
+        <li><a class="is-active" href="../basics/logicAndSequences.html">Logic and Sequences</a></li>
+        <li><a href="../basics/scripting.html">Scripting</a></li>
+        <li><a href="../basics/basics3D.html">3D Basics</a></li>
+      </ul>
+      <p class="menu-label">Examples</p>
+      <ul class="menu-list">
+        <li><a href="../examples/basics.html">Basic Examples</a></li>
+      </ul>
+      <p class="menu-label">Apps</p>
+      <ul class="menu-list">
+        <li><a href="../apps/prettyGraph.html">Pretty Grapher</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <section class="banner">
+        <h1>GeoGebra Tuts</h1>
+        <h3>Logic and Sequences</h3>
       </section>
-      <div class="container">
-        <section class="section">
-          <div class="columns">
-            <div class="column is-3 is-hidden-touch">
-              <aside class="menu">
-                <p class="menu-label">Basics</p>
-                <ul class="menu-list">
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="../basics/gettingStarted.html">Getting Started</a></li>
-                  <li><a href="../basics/basics2D.html">Basic 2D Commands</a></li>
-                  <li><a href="../basics/text.html">Using Text</a></li>
-                  <li><a class="is-active" href="../basics/logicAndSequences.html">Logic and Sequences</a></li>
-                  <li><a href="../basics/scripting.html">Scripting</a></li>
-                  <li><a href="../basics/basics3D.html">3D Basics</a></li>
-                </ul>
-                <p class="menu-label">Examples</p>
-                <ul class="menu-list">
-                  <li><a href="../examples/basics.html">Basic Examples</a></li>
-                </ul>
-              </aside>
-            </div>
-            <div class="column">
-              <div class="card">
-                <header class="card-header">
-                  <p class="card-header-title">Logic and Sequences</p>
-                </header>
-                <div class="card-content content">
-                  <p>On this page, we will explore how to use some "logical" features of GeoGebra, as well as explore lists and sequences in GeoGebra. All of these features are somewhat advanced, but are very powerful tools once you get used to using them.</p>
-                </div>
-              </div><br/>
-              <div class="card">
-                <div class="card-header">
-                  <p class="card-header-title">Resources</p>
-                </div>
-                <div class="card-content">
-                  <div class="box resource-box">
-                    <div class="columns is-vcentered">
-                      <div class="column">Conditional Visibility</div>
-                      <div class="column is-narrow"><a class="button is-danger is-outlined video-button" data-videoid="84IvCpJPOfU" data-aspectratio="1.5"><span class="icon"><i class="fa fa-file-video-o"></i></span><span>Video</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box resource-box">
-                    <div class="columns is-vcentered">
-                      <div class="column">The If Command</div>
-                      <div class="column is-narrow"><a class="button is-danger is-outlined video-button" data-videoid="MeTy7ZHpc8g" data-aspectratio="1.5"><span class="icon"><i class="fa fa-file-video-o"></i></span><span>Video</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box resource-box">
-                    <div class="columns is-vcentered">
-                      <div class="column">Lists in GeoGebra</div>
-                      <div class="column is-narrow"><a class="button is-danger is-outlined video-button" data-videoid="Qz4XiUGLP64" data-aspectratio="1.5"><span class="icon"><i class="fa fa-file-video-o"></i></span><span>Video</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box resource-box">
-                    <div class="columns is-vcentered">
-                      <div class="column">List Example: Function List</div>
-                      <div class="column is-narrow"><a class="button is-danger is-outlined video-button" data-videoid="jxUHWPdf_m0" data-aspectratio="1.5"><span class="icon"><i class="fa fa-file-video-o"></i></span><span>Video</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box resource-box">
-                    <div class="columns is-vcentered">
-                      <div class="column">Sequences in GeoGebra</div>
-                      <div class="column is-narrow"><a class="button is-danger is-outlined video-button" data-videoid="4kxdUqiIEpk" data-aspectratio="1.5"><span class="icon"><i class="fa fa-file-video-o"></i></span><span>Video</span></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div id="contentContainer">
+        <div class="card">
+          <div class="card-title">Logic and Sequences</div>
+          <div class="card-body">
+            <p>On this page, we will explore how to use some "logical" features of GeoGebra, as well as explore lists and sequences in GeoGebra. All of these features are somewhat advanced, but are very powerful tools once you get used to using them.</p>
           </div>
-        </section>
-      </div>
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
-            <p><span class="is-primary">GeoGebra Tutorials</span> 2017</p>
-            <p>Grant Sander</p>
-            <p><a class="icon is-medium" href="https://github.com/gksander/GGBtuts" target="_blank"><i class="fa fa-github"></i></a></p>
+        </div><br/>
+        <div class="card">
+          <div class="card-title">Resources</div>
+          <div class="card-body"><a class="resource-box video-button" data-videoid="84IvCpJPOfU" data-aspectratio="1.5">Conditional Visibility<i class="fa fa-file-video-o red"></i></a><a class="resource-box video-button" data-videoid="MeTy7ZHpc8g" data-aspectratio="1.5">The If Command<i class="fa fa-file-video-o red"></i></a><a class="resource-box video-button" data-videoid="Qz4XiUGLP64" data-aspectratio="1.5">Lists in GeoGebra<i class="fa fa-file-video-o red"></i></a><a class="resource-box video-button" data-videoid="jxUHWPdf_m0" data-aspectratio="1.5">List Example: Function List<i class="fa fa-file-video-o red"></i></a><a class="resource-box video-button" data-videoid="4kxdUqiIEpk" data-aspectratio="1.5">Sequences in GeoGebra<i class="fa fa-file-video-o red"></i></a>
           </div>
         </div>
-      </footer>
-      <div class="video-overlay"><a id="close-video-overlay"><i class="fa fa-times"></i></a>
-        <div id="cosmal-video-iframe"></div>
       </div>
+    </div>
+    <div class="video-overlay"><a id="close-video-overlay"><i class="fa fa-times"></i></a>
+      <div id="cosmal-video-iframe"></div>
     </div>
   </body>
 </html>

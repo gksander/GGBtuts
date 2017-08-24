@@ -1,4 +1,4 @@
-extends ../layouts/geogebra
+extends ../layouts/main
 
 block vars
   - var relDepth = "../"
@@ -12,7 +12,10 @@ block vars
   - resources.push({ title: 'List Example: Function List', type: 'video', videoAspectRatio: 1.5, videoID: 'jxUHWPdf_m0' })
   - resources.push({ title: 'Sequences in GeoGebra', type: 'video', videoAspectRatio: 1.5, videoID: '4kxdUqiIEpk' })
 
-
-block resourceDescription
-  p
-    | On this page, we will explore how to use some "logical" features of GeoGebra, as well as explore lists and sequences in GeoGebra. All of these features are somewhat advanced, but are very powerful tools once you get used to using them.
+block content
+  +descriptionBlock(sideMenuTitle)
+    p
+      | On this page, we will explore how to use some "logical" features of GeoGebra, as well as explore lists and sequences in GeoGebra. All of these features are somewhat advanced, but are very powerful tools once you get used to using them.
+  br/
+  
+  +resourceList(resources)

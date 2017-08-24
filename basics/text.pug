@@ -1,4 +1,4 @@
-extends ../layouts/geogebra
+extends ../layouts/main
 
 block vars
   - var relDepth = "../"
@@ -11,7 +11,10 @@ block vars
   - resources.push({ title: 'LaTeX in GeoGebra', type: 'video', videoAspectRatio: 1.5, videoID: 'mA60YG0FTkg' })
   - resources.push({ title: 'Example: Change Slider', type: 'video', videoAspectRatio: 1.5, videoID: 'oT9VYhoW3kI' })
 
-
-block resourceDescription
-  p
-    | On this page, we will explore how to add text to GeoGebra constructions. GeoGebra has wonder text support: you can make text move around the screen, have the contents of the text change dynamically, and render beautiful math with LaTeX!
+block content
+  +descriptionBlock(sideMenuTitle)
+    p
+      | On this page, we will explore how to add text to GeoGebra constructions. GeoGebra has wonder text support: you can make text move around the screen, have the contents of the text change dynamically, and render beautiful math with LaTeX!
+  br/
+  
+  +resourceList(resources)

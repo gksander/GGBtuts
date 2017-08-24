@@ -1,3 +1,17 @@
+include ../includes/mixins.pug
+
+//- Nav Panel params
+- var navItems = [];
+//- Covering Basics
+- navItems.push({title: 'Basics', links: [ ["Home", "index.html"], ["Getting Started", "basics/gettingStarted.html"], ["Basic 2D Commands", "basics/basics2D.html"], ["Using Text", "basics/text.html"], ["Logic and Sequences", "basics/logicAndSequences.html"], ["Scripting", "basics/scripting.html"], ["3D Basics", "basics/basics3D.html"] ]});
+
+//- Examples
+-navItems.push({ title: 'Examples', links: [ ['Basic Examples', 'examples/basics.html'] ] });
+
+//- Apps
+- navItems.push({ title: 'Apps', links: [ ["Pretty Grapher", "apps/prettyGraph.html"] ] })
+
+
 doctype html
 html
   head
@@ -8,7 +22,7 @@ html
     //- Styles
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Zilla+Slab")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
-    link(rel="stylesheet", href=relDepth + "css/main.css")
+    link(rel="stylesheet", href=relDepth + "css/main2.css") 
 
     //- Scripts
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
@@ -16,8 +30,25 @@ html
     block scripts
 
   body
-    .wrapper
+    #header
+      span#menuButton
+        i.fa.fa-bars
+      span
+        | Header icon...
+      span
+        | Grant Sander
+
+    #sideMenu
+      each item in navItems
+        p.menu-label= item.title
+        ul.menu-list
+          each link in item.links
+            li
+              a(href=relDepth + link[1], class=sideMenuTitle==link[0] ? "is-active" : "")= link[0]
+
+    #content
       include ../includes/pageBanner.pug
-      block content
-      include ../includes/footer.pug
-      include ../includes/videomodal.pug 
+      #contentContainer
+        block content
+    
+    include ../includes/videomodal.pug

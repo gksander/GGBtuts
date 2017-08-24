@@ -27,5 +27,7 @@ $(function() {
     }), $(document).on("keyup", function(e) {
         27 == e.keyCode && $(".video-overlay").hasClass("is-active") && ($(".video-overlay").removeClass("is-active"), 
         cosmal.player.pauseVideo());
-    }));
+    })), $("#menuButton").on("click", function() {
+        $("#menuButton i").toggleClass("fa-bars fa-times"), $("#sideMenu").toggleClass("sideMenuShown");
+    });
 });

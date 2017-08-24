@@ -91,4 +91,11 @@ $(function () { // Document ready
 
   } // END VIDEO RESPONSIVENESS
 
+
+  // Menu Toggle
+  $("#menuButton").on('click', function(){
+    $("#menuButton i").toggleClass("fa-bars fa-times");
+    $("#sideMenu").toggleClass("sideMenuShown");
+  });
+
 });

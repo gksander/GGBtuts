@@ -1,4 +1,4 @@
-extends ../layouts/geogebra
+extends ../layouts/main
 
 block vars
   - var relDepth = "../"
@@ -12,6 +12,10 @@ block vars
   - resources.push({ title: 'Creating Sliders', type: 'video', videoAspectRatio: 1.5, videoID: 'KO1xaSFdHSA' })
   - resources.push({ title: 'Creating Functions', type: 'video', videoAspectRatio: 1.5, videoID: 'JLvitSr9EaI' })
 
-block resourceDescription
-  p
-    | On this page, we will explore some of the basic GeoGebra commands for creating 2D Objects, such as points, lines, circles, function graphs, and sliders!
+block content
+  +descriptionBlock(sideMenuTitle)
+    p
+      | On this page, we will explore some of the basic GeoGebra commands for creating 2D Objects, such as points, lines, circles, function graphs, and sliders!
+  br/
+  
+  +resourceList(resources)

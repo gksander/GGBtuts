@@ -1,4 +1,4 @@
-extends ../layouts/geogebra
+extends ../layouts/main
 
 block vars
   - var relDepth = "../"
@@ -12,6 +12,10 @@ block vars
   - resources.push({ title: 'Starting an Animation', type: 'video', videoAspectRatio: 1.5, videoID: 'q2ptGTXbfbw' })
   
 
-block resourceDescription
-  p
-    | On this page, we will explore how to use GeoGebra's "scripting" functionalities. Scripting in GeoGebra allows us to run a chunk of code whenever an object is clicked or updated. This allows us to extend GeoGebra's functionality in very flexible ways.
+block content
+  +descriptionBlock(sideMenuTitle)
+    p
+      | On this page, we will explore how to use GeoGebra's "scripting" functionalities. Scripting in GeoGebra allows us to run a chunk of code whenever an object is clicked or updated. This allows us to extend GeoGebra's functionality in very flexible ways.
+  br/
+  
+  +resourceList(resources)

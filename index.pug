@@ -1,16 +1,17 @@
-extends layouts/geogebra
+extends layouts/main
 
 block vars
   - var relDepth = ""
   - var sideMenuTitle = "Home"
   - var subtitle = sideMenuTitle
 
-block resourceDescription
-  p
-    | This site is comprised of resources for learning GeoGebra, and ideas for using GeoGebra in teaching scenarios. These resources were put together by Grant Sander -- you can contact him at 
-    a gksander93@gmail.com
-    | .
-  p
-    | GeoGebra is a graphing calculator for functions, geometry, algebra, calculus, statistics and 3D math. You can find more at 
-    a(href="https://geogebra.org", target="_blank") geogebra.org
-    | , or begin navigating this site to find out more.
+block content
+  +descriptionBlock(sideMenuTitle)
+    p
+      | This site is comprised of resources for learning GeoGebra, and ideas for using GeoGebra in teaching scenarios. These resources were put together by Grant Sander -- you can contact him at 
+      a gksander93@gmail.com
+      | .
+    p
+      | GeoGebra is a graphing calculator for functions, geometry, algebra, calculus, statistics and 3D math. You can find more at 
+      a(href="https://geogebra.org", target="_blank") geogebra.org
+      | , or begin navigating this site to find out more.

@@ -1,10 +1,10 @@
-extends ../layouts/geogebra
+extends ../layouts/main
 
 block vars
   - var relDepth = "../"
   - var sideMenuTitle = "Basic Examples"
   - var subtitle = sideMenuTitle
 
-block resourceDescription
-  p
-    | In progress...
+block content
+  +descriptionBlock(sideMenuTitle)
+    p In progress...
