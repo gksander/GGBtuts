@@ -5,6 +5,7 @@ $(function(){
     height: 500,
     showMenuBar: true,
     // customToolBar: "0 || 17",
+    enableRightClick: true,
     showAlgebraInput: true,
     enableShiftDragZoom: true,
     algebraInputPosition: 'bottom'

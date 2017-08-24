@@ -6,6 +6,7 @@ $(function() {
         width: 800,
         height: 500,
         showMenuBar: !0,
+        enableRightClick: !0,
         showAlgebraInput: !0,
         enableShiftDragZoom: !0,
         algebraInputPosition: "bottom"
