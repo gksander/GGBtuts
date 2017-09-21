@@ -1,8 +1,11 @@
 $(function(){
+  let w = 800,
+      h = 500;
+
   let parameters = {
     material_id: 'YFmzqsde',
-    width: 800,
-    height: 500,
+    width: w,
+    height: h,
     showMenuBar: true,
     // customToolBar: "0 || 17",
     enableRightClick: true,
@@ -14,7 +17,7 @@ $(function(){
   document.app = new GGBApplet('5.0', parameters);
   document.app.inject('appContainer')
 
-
+  // Handle Export
   $("#export").on('click', function(){
     let fn = $("#filename").val(),
         scale = parseFloat($("#scale").val()),
@@ -22,5 +25,30 @@ $(function(){
         DPI = parseFloat($("#DPI").val());
 
     ggbApplet.writePNGtoFile(`${fn}.png`, scale, transparent, DPI);
-  })
+  });
+
+  // Handle resizing
+  $("#appWidth").val(w);
+  $("#appHeight").val(h);
+  $("#appWidth, #appHeight").on('change', function(){
+    let w = parseFloat($("#appWidth").val()),
+        h = parseFloat($("#appHeight").val());
+
+    $("#appWidth").val(w);
+    $("#appHeight").val(h);
+
+    ggbApplet.setSize(w, h);
+    // ggbApplet.recalculateEnvironments();
+    
+    // $("#appContainer, .appScaler").height(h).width(w);
+
+  });
+
+  // Handle changing of views
+  $(".viewButton").on('click', function(){
+    let view = $(this).attr('id').substr(4);
+    ggbApplet.setPerspective(view);
+  });
+
+
 })

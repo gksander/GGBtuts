@@ -23,10 +23,24 @@ block content
       | Even though this was designed to quickly create function graphs, you can also use this applet as you normally would -- and then use the export option.
   
   br/
+
+  +descriptionBlock("Applet Options")
+    p
+      | Size: 
+      input#appWidth(size=6)
+      |  by 
+      input#appHeight(size=6)
+
+    p
+      button.button.blue.viewButton#viewG Graphics Only
+      button.button.blue.viewButton#viewAG Algebra + Graphics
+      
+  br/
   
   #appContainer
   
   br/
+
   +descriptionBlock("Export Options")
     p Set the parameters below, and then press the Export button. The set defaults generally work well, but feel free to change the parameters.
 

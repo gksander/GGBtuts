@@ -5,6 +5,15 @@ block vars
   - var sideMenuTitle = "Basic Examples"
   - var subtitle = sideMenuTitle
 
+  - var resources = []
+  - resources.push({ title: 'Function Graph Trace', type: 'video', videoAspectRatio: 1.5, videoID: 'rNvzhlsDjCM' })
+  - resources.push({ title: 'Adjustable Angle', type: 'video', videoAspectRatio: 1.5, videoID: 'STtOHuOi3UE' })
+  - resources.push({ title: 'Sine and Cosine', type: 'video', videoAspectRatio: 1.5, videoID: 'JtFX3V35IA8' })
+
 block content
   +descriptionBlock(sideMenuTitle)
-    p In progress...
+    p
+      | This page consists of a few videos covering some examples of using GeoGebra to create interactive constructions.
+  br/
+  
+  +resourceList(resources)
