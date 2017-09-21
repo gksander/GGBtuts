@@ -49,6 +49,7 @@ $(function(){
     let view = $(this).attr('id').substr(4);
 
     ggbApplet.setPerspective(view);
+    ggbApplet.setGridVisible(true);
 
     ggbApplet.showToolBar(view != "G");
     ggbApplet.showAlgebraInput(view != "G");

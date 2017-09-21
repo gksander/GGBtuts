@@ -12,14 +12,15 @@ $(function() {
         algebraInputPosition: "bottom"
     };
     document.app = new GGBApplet("5.0", t), document.app.inject("appContainer"), $("#export").on("click", function() {
-        var t = $("#filename").val(), a = parseFloat($("#scale").val()), e = $("#trans").prop("checked"), p = parseFloat($("#DPI").val());
-        ggbApplet.writePNGtoFile(t + ".png", a, e, p);
+        var t = $("#filename").val(), e = parseFloat($("#scale").val()), p = $("#trans").prop("checked"), a = parseFloat($("#DPI").val());
+        ggbApplet.writePNGtoFile(t + ".png", e, p, a);
     }), $("#appWidth").val(800), $("#appHeight").val(500), $("#appWidth, #appHeight").on("change", function() {
-        var t = parseFloat($("#appWidth").val()), a = parseFloat($("#appHeight").val());
-        $("#appWidth").val(t), $("#appHeight").val(a), ggbApplet.setSize(t, a);
+        var t = parseFloat($("#appWidth").val()), e = parseFloat($("#appHeight").val());
+        $("#appWidth").val(t), $("#appHeight").val(e), ggbApplet.setSize(t, e);
     }), $(".viewButton").on("click", function() {
         var t = $(this).attr("id").substr(4);
-        ggbApplet.setPerspective(t), ggbApplet.showToolBar("G" != t), ggbApplet.showAlgebraInput("G" != t);
+        ggbApplet.setPerspective(t), ggbApplet.setGridVisible(!0), ggbApplet.showToolBar("G" != t), 
+        ggbApplet.showAlgebraInput("G" != t);
     }), $("#showInputBar").on("click", function() {
         ggbApplet.showAlgebraInput(!0), ggbApplet.recalculateEnvironments();
     });
