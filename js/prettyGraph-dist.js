@@ -16,7 +16,7 @@ $(function() {
         ggbApplet.writePNGtoFile(t + ".png", e, p, a);
     }), $("#appWidth").val(800), $("#appHeight").val(500), $("#appWidth, #appHeight").on("change", function() {
         var t = parseFloat($("#appWidth").val()), e = parseFloat($("#appHeight").val());
-        $("#appWidth").val(t), $("#appHeight").val(e), ggbApplet.setSize(t, e);
+        $("#appWidth").val(t), $("#appHeight").val(e), ggbApplet.setSize(t, e), e > 500 && $("#appContainer").height(e);
     }), $(".viewButton").on("click", function() {
         var t = $(this).attr("id").substr(4);
         ggbApplet.setPerspective(t), ggbApplet.setGridVisible(!0), ggbApplet.showToolBar("G" != t), 

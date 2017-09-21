@@ -38,7 +38,9 @@ $(function(){
     $("#appHeight").val(h);
 
     ggbApplet.setSize(w, h);
-    // ggbApplet.recalculateEnvironments();
+    if (h > 500){
+      $("#appContainer").height(h);
+    }
     
     // $("#appContainer, .appScaler").height(h).width(w);
 
