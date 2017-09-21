@@ -19,6 +19,8 @@ $(function() {
         $("#appWidth").val(t), $("#appHeight").val(a), ggbApplet.setSize(t, a);
     }), $(".viewButton").on("click", function() {
         var t = $(this).attr("id").substr(4);
-        ggbApplet.setPerspective(t);
+        ggbApplet.setPerspective(t), ggbApplet.showToolBar("G" != t), ggbApplet.showAlgebraInput("G" != t);
+    }), $("#showInputBar").on("click", function() {
+        ggbApplet.showAlgebraInput(!0), ggbApplet.recalculateEnvironments();
     });
 });

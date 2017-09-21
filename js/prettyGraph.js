@@ -47,7 +47,16 @@ $(function(){
   // Handle changing of views
   $(".viewButton").on('click', function(){
     let view = $(this).attr('id').substr(4);
+
     ggbApplet.setPerspective(view);
+
+    ggbApplet.showToolBar(view != "G");
+    ggbApplet.showAlgebraInput(view != "G");
+  });
+
+  $("#showInputBar").on('click', function(){
+    ggbApplet.showAlgebraInput(true);
+    ggbApplet.recalculateEnvironments();
   });
 
 
