@@ -9,11 +9,12 @@ $(function() {
         enableRightClick: !0,
         showAlgebraInput: !0,
         enableShiftDragZoom: !0,
+        enableLabelDrags: !0,
         algebraInputPosition: "bottom"
     };
     document.app = new GGBApplet("5.0", t), document.app.inject("appContainer"), $("#export").on("click", function() {
-        var t = $("#filename").val(), e = parseFloat($("#scale").val()), p = $("#trans").prop("checked"), a = parseFloat($("#DPI").val());
-        ggbApplet.writePNGtoFile(t + ".png", e, p, a);
+        var t = $("#filename").val(), e = parseFloat($("#scale").val()), a = $("#trans").prop("checked"), p = parseFloat($("#DPI").val());
+        ggbApplet.writePNGtoFile(t + ".png", e, a, p);
     }), $("#appWidth").val(800), $("#appHeight").val(500), $("#appWidth, #appHeight").on("change", function() {
         var t = parseFloat($("#appWidth").val()), e = parseFloat($("#appHeight").val());
         $("#appWidth").val(t), $("#appHeight").val(e), ggbApplet.setSize(t, e), e > 500 && $("#appContainer").height(e);

@@ -11,6 +11,7 @@ $(function(){
     enableRightClick: true,
     showAlgebraInput: true,
     enableShiftDragZoom: true,
+    enableLabelDrags: true,
     algebraInputPosition: 'bottom'
     // allowUpscale: true
   };
